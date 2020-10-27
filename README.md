@@ -23,7 +23,7 @@ javascript: (function(){var date = new Date();var day = new Date(date.getFullYea
 
 1. 請根據自己的瀏覽器安裝 Tampermonkey 或 GreaseMonkey
 
-2. [點我安裝](https://github.com/setsal/NCTU-PT-Attendance-Filter/raw/main/ptAttendance.user.js)
+2. [點我安裝](ptAttendance.user.js?raw=1)
 
 
 ## 效果
