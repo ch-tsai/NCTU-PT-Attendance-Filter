@@ -13,8 +13,27 @@
 
 將下方 Script 新增至書籤，點擊後執行
     
-```javascript=!
-javascript: (function(){var date = new Date();var day = new Date(date.getFullYear(), date.getMonth(), 1);var ptLists = document.getElementsByClassName('border-top border-dark');for (var i = 0; i < ptLists.item(0).childNodes.length; i++) {var ptDate = ptLists.item(0).childNodes[i].childNodes[14].innerText;var ptDay = new Date(ptDate + 'T00:00:00'); var diffMonths = ptDay.getMonth() - day.getMonth() + (12 * (ptDay.getFullYear() - day.getFullYear())); if (day > ptDay) {for (var j = 0; j < ptLists.item(0).childNodes[i].childNodes.length; j++) {ptLists.item(0).childNodes[i].childNodes[j].innerHTML = '<td class="text-right align-middle"><span style="color:grey;"><del>' + ptLists.item(0).childNodes[i].childNodes[j].innerText + '</del></span></td>';}} if (diffMonths == 0) {for (var j = 0; j < ptLists.item(0).childNodes[i].childNodes.length; j++) {ptLists.item(0).childNodes[i].childNodes[j].innerHTML = '<td class="text-right align-middle"><span style="color:red;">' + ptLists.item(0).childNodes[i].childNodes[j].innerText + '</span></td>';}}}})()
+```javascript
+javascript: (function() {
+    var date = new Date();
+    var day = new Date(date.getFullYear(), date.getMonth(), 1);
+    var ptLists = document.getElementsByClassName('border-top border-dark');
+    for (var i = 0; i < ptLists.item(0).childNodes.length; i++) {
+        var ptDate = ptLists.item(0).childNodes[i].childNodes[14].innerText;
+        var ptDay = new Date(ptDate + 'T00:00:00');
+        var diffMonths = ptDay.getMonth() - day.getMonth() + (12 * (ptDay.getFullYear() - day.getFullYear()));
+        if (day > ptDay) {
+            for (var j = 0; j < ptLists.item(0).childNodes[i].childNodes.length; j++) {
+                ptLists.item(0).childNodes[i].childNodes[j].innerHTML = '<td class="text-right align-middle"><span style="color:grey;"><del>' + ptLists.item(0).childNodes[i].childNodes[j].innerText + '</del></span></td>';
+            }
+        }
+        if (diffMonths == 0) {
+            for (var j = 0; j < ptLists.item(0).childNodes[i].childNodes.length; j++) {
+                ptLists.item(0).childNodes[i].childNodes[j].innerHTML = '<td class="text-right align-middle"><span style="color:red;">' + ptLists.item(0).childNodes[i].childNodes[j].innerText + '</span></td>';
+            }
+        }
+    }
+})();
 ```
 
 ### 方法二
